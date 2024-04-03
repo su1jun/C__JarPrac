@@ -12,24 +12,19 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 @Profile("test")
-public class ListProductRepository implements ProductRepository {
+public class ListProductRepository implements ProductRepository
+    private List<Product> products = new CopyOnWriteArrayList<>()
+    private AtomicLong sequence = new AtomicLong(1L)
+    public Product add(Product product)
+        product.setId(sequence.getAndAdd(1L))
+        products.add(product)
+        return product
 
-    private List<Product> products = new CopyOnWriteArrayList<>();
-    private AtomicLong sequence = new AtomicLong(1L);
-
-    public Product add(Product product) {
-        product.setId(sequence.getAndAdd(1L));
-
-        products.add(product);
-        return product;
-    }
-
-    public Product findById(Long id) {
-        return products.stream()
-            .filter(product -> product.sameId(id))
-            .findFirst()
-            .orElseThrow(() -> new EntityNotFoundException("Product를 찾지 못했습니다."));
-    }
+    public Product findById(Long id)
+        return products.stream(
+            .filter(product -> product.sameId(id)
+            .findFirst(
+            .orElseThrow(() -> new EntityNotFoundException("Product를 찾지 못했습니다."))
 
     public List<Product> findAll() {
         return products;
