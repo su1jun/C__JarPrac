@@ -17,16 +17,6 @@ public class ProductController {
         this.simpleProductService = simpleProductService;
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto) {
-        return simpleProductService.add(productDto);
-    }
-
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public ProductDto findProductById(@PathVariable Long id) {
-        return simpleProductService.findById(id);
-    }
-
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public List<ProductDto> findProducts(
             @RequestParam(required = false) String name
@@ -35,6 +25,16 @@ public class ProductController {
             return simpleProductService.findAll();
 
         return simpleProductService.findByNameContaining(name);
+    }
+
+    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto) {
+        return simpleProductService.add(productDto);
+    }
+
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    public ProductDto findProductById(@PathVariable Long id) {
+        return simpleProductService.findById(id);
     }
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
