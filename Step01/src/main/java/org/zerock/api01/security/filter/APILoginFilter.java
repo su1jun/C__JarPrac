@@ -19,11 +19,9 @@ import java.util.Map;
 
 @Log4j2
 public class APILoginFilter extends AbstractAuthenticationProcessingFilter {
-
     public APILoginFilter(String defaultFilterProcessesUrl) {
         super(defaultFilterProcessesUrl);
     }
-
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
 
@@ -49,16 +47,11 @@ public class APILoginFilter extends AbstractAuthenticationProcessingFilter {
         return getAuthenticationManager().authenticate(authenticationToken);
     }
 
-
     private Map<String,String> parseRequestJSON(HttpServletRequest request) {
-
         //JSON 데이터를 분석해서 mid, mpw 전달 값을 Map으로 처리
         try(Reader reader = new InputStreamReader(request.getInputStream())){
-
             Gson gson = new Gson();
-
             return gson.fromJson(reader, Map.class);
-
         }catch(Exception e){
             log.error(e.getMessage());
         }

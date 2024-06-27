@@ -24,11 +24,8 @@ import java.util.Map;
 @Log4j2
 @RequiredArgsConstructor
 public class RefreshTokenFilter  extends OncePerRequestFilter {
-
     private final String refreshPath;
-
     private final JWTUtil jwtUtil;
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
@@ -105,8 +102,6 @@ public class RefreshTokenFilter  extends OncePerRequestFilter {
         log.info("refreshToken: " + refreshTokenValue);
 
         sendTokens(accessTokenValue, refreshTokenValue, response);
-
-
     }
 
     private Map<String,String> parseRequestJSON(HttpServletRequest request) {
@@ -125,7 +120,6 @@ public class RefreshTokenFilter  extends OncePerRequestFilter {
     }
 
     private void checkAccessToken(String accessToken)throws RefreshTokenException {
-
         try{
             jwtUtil.validateToken(accessToken);
         }catch (ExpiredJwtException expiredJwtException){
@@ -136,12 +130,9 @@ public class RefreshTokenFilter  extends OncePerRequestFilter {
     }
 
     private Map<String, Object> checkRefreshToken(String refreshToken)throws RefreshTokenException{
-
         try {
             Map<String, Object> values = jwtUtil.validateToken(refreshToken);
-
             return values;
-
         }catch(ExpiredJwtException expiredJwtException){
             throw new RefreshTokenException(RefreshTokenException.ErrorCase.OLD_REFRESH);
         }catch(Exception exception){
@@ -152,8 +143,6 @@ public class RefreshTokenFilter  extends OncePerRequestFilter {
     }
 
     private void sendTokens(String accessTokenValue, String refreshTokenValue, HttpServletResponse response) {
-
-
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 
         Gson gson = new Gson();

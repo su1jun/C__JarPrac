@@ -49,7 +49,6 @@ public class JWTUtil {
         return jwtStr;
     }
 
-
     public Map<String, Object> validateToken(String token)throws JwtException {
 
         Map<String, Object> claim = null;
@@ -60,5 +59,4 @@ public class JWTUtil {
                 .getBody();
         return claim;
     }
-
 }

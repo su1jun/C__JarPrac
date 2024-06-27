@@ -37,24 +37,16 @@ public class TokenCheckFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-
         if (!path.startsWith("/api/")) {
             filterChain.doFilter(request, response);
             return;
         }
-
         log.info("Token Check Filter..........................");
         log.info("JWTUtil: " + jwtUtil);
-
-
-
         try{
-
             Map<String, Object> payload = validateAccessToken(request);
-
             //mid
             String mid = (String)payload.get("mid");
-
             log.info("mid: " + mid);
 
             UserDetails userDetails = apiUserDetailsService.loadUserByUsername(mid);
@@ -62,7 +54,6 @@ public class TokenCheckFilter extends OncePerRequestFilter {
             UsernamePasswordAuthenticationToken authentication =
                     new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
-
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -79,7 +70,6 @@ public class TokenCheckFilter extends OncePerRequestFilter {
         if(headerStr == null  || headerStr.length() < 8){
             throw new AccessTokenException(AccessTokenException.TOKEN_ERROR.UNACCEPT);
         }
-
         //Bearer 생략
         String tokenType = headerStr.substring(0,6);
         String tokenStr =  headerStr.substring(7);
@@ -87,10 +77,8 @@ public class TokenCheckFilter extends OncePerRequestFilter {
         if(tokenType.equalsIgnoreCase("Bearer") == false){
             throw new AccessTokenException(AccessTokenException.TOKEN_ERROR.BADTYPE);
         }
-
         try{
             Map<String, Object> values = jwtUtil.validateToken(tokenStr);
-
             return values;
         }catch(MalformedJwtException malformedJwtException){
             log.error("MalformedJwtException----------------------");
@@ -103,5 +91,4 @@ public class TokenCheckFilter extends OncePerRequestFilter {
             throw new AccessTokenException(AccessTokenException.TOKEN_ERROR.EXPIRED);
         }
     }
-
 }

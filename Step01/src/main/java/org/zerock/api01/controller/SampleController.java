@@ -1,6 +1,5 @@
 package org.zerock.api01.controller;
 
-
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/sample")
 public class SampleController {
-
     @GetMapping("/doA")
     @PreAuthorize("hasRole('ROLE_USER')")
     public List<String> doA() {

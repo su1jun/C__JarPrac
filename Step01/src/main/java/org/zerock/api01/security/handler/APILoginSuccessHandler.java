@@ -24,7 +24,6 @@ public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
-
         log.info("Login Success Handler......................");
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
@@ -47,6 +46,5 @@ public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
         String jsonStr = gson.toJson(keyMap);
 
         response.getWriter().println(jsonStr);
-
     }
 }

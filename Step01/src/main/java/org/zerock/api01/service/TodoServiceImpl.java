@@ -17,7 +17,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Log4j2
 public class TodoServiceImpl implements TodoService{
-
     private final TodoRepository todoRepository;
     private final ModelMapper modelMapper;
 
@@ -33,11 +32,8 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public TodoDTO read(Long tno) {
-
         Optional<Todo> result = todoRepository.findById(tno);
-
         Todo todo = result.orElseThrow();
-
         return modelMapper.map(todo, TodoDTO.class);
     }
 
@@ -54,11 +50,8 @@ public class TodoServiceImpl implements TodoService{
     }
     @Override
     public void remove(Long tno) {
-
         todoRepository.deleteById(tno);
-
     }
-
     @Override
     public void modify(TodoDTO todoDTO) {
 
@@ -72,7 +65,4 @@ public class TodoServiceImpl implements TodoService{
 
         todoRepository.save(todo);
     }
-
-
-
 }

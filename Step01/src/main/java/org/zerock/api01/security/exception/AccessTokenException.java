@@ -11,7 +11,6 @@ import java.util.Map;
 public class AccessTokenException extends RuntimeException {
 
     TOKEN_ERROR token_error;
-
     public enum TOKEN_ERROR {
         UNACCEPT(401,"Token is null or too short"),
         BADTYPE(401, "Token type Bearer"),
@@ -42,7 +41,6 @@ public class AccessTokenException extends RuntimeException {
     }
 
     public void sendResponseError(HttpServletResponse response){
-
         response.setStatus(token_error.getStatus());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 

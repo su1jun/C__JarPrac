@@ -30,18 +30,14 @@ import org.zerock.api01.security.handler.APILoginSuccessHandler;
 import org.zerock.api01.util.JWTUtil;
 
 import java.util.Arrays;
-
-
 @Configuration
 @Log4j2
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @RequiredArgsConstructor
 public class CustomSecurityConfig {
-
     //주입
     private final APIUserDetailsService apiUserDetailsService;
-
     private final JWTUtil jwtUtil;
 
     @Bean
@@ -51,24 +47,20 @@ public class CustomSecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-
         log.info("------------web configure-------------------");
-
         return (web) -> web.ignoring()
                 .requestMatchers(
                         PathRequest.toStaticResources().atCommonLocations());
-
-
     }
 
     @Bean
     public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
-
         log.info("------------configure-------------------");
 
         //AuthenticationManager설정
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(apiUserDetailsService).passwordEncoder(passwordEncoder());
+
         // Get AuthenticationManager
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
 
@@ -79,12 +71,11 @@ public class CustomSecurityConfig {
         APILoginFilter apiLoginFilter = new APILoginFilter("/generateToken");
         apiLoginFilter.setAuthenticationManager(authenticationManager);
 
-
         //APILoginSuccessHandler
         APILoginSuccessHandler successHandler = new APILoginSuccessHandler(jwtUtil);
+
         //SuccessHandler 세팅
         apiLoginFilter.setAuthenticationSuccessHandler(successHandler);
-
 
         //APILoginFilter의 위치 조정
         http.addFilterBefore(apiLoginFilter, UsernamePasswordAuthenticationFilter.class);
@@ -109,7 +100,6 @@ public class CustomSecurityConfig {
         return http.build();
 
     }
-
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -121,13 +111,7 @@ public class CustomSecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
-
-
     private TokenCheckFilter tokenCheckFilter(JWTUtil jwtUtil, APIUserDetailsService apiUserDetailsService){
-
         return new TokenCheckFilter(apiUserDetailsService, jwtUtil);
     }
-
-
-
 }

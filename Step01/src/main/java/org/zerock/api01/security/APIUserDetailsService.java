@@ -24,7 +24,6 @@ public class APIUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         Optional<APIUser> result = apiUserRepository.findById(username);
 
         APIUser apiUser = result.orElseThrow(() -> new UsernameNotFoundException("Cannot find mid"));
