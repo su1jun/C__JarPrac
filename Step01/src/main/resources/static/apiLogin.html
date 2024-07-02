@@ -6,26 +6,21 @@
 </head>
 <body>
 
-<button class="btn1">generateToken</button>
+    <button class="btn1">generateToken</button>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-
-    document.querySelector(".btn1").addEventListener("click",()=> {
-
-        const data = {mid:"apiuser10", mpw:"1111"}
-
-        axios.post("http://localhost:8080/generateToken", data).then(res => {
-            const accessToken = res.data.accessToken
-            const refreshToken = res.data.refreshToken
-
-            localStorage.setItem("accessToken", accessToken)
-            localStorage.setItem("refreshToken", refreshToken)
-
-        })
-
-    }, false)
-</script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        document.querySelector(".btn1").addEventListener("click",()=> {
+            const data = {mid:"apiuser10", mpw:"1111"}
+            axios.post("http://localhost:8080/generateToken", data).then(res => {
+                const accessToken = res.data.accessToken
+                const refreshToken = res.data.refreshToken
+    
+                localStorage.setItem("accessToken", accessToken)
+                localStorage.setItem("refreshToken", refreshToken)
+            })
+        }, false)
+    </script>
 
 </body>
 </html>

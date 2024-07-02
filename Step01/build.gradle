@@ -54,13 +54,9 @@ dependencies {
     annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}:jpa"
 
     annotationProcessor(
-
             "javax.persistence:javax.persistence-api",
-
             "javax.annotation:javax.annotation-api",
-
             "com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
-
 
 }
 

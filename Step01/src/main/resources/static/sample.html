@@ -6,22 +6,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Sample Client</h1>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<script>
+    <h1>Sample Client</h1>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        async function callTest(){
+            const response = await axios.get("http://localhost:8080/api/sample/doA")
+            return response.data
+        }
 
-    async function callTest(){
-        const response = await axios.get("http://localhost:8080/api/sample/doA")
-        return response.data
-    }
-
-    callTest()
-        .then(data => console.log(data))
-        .catch(e => console.log(e));
-
-
-</script>
+        callTest()
+            .then(data => console.log(data))
+            .catch(e => console.log(e));
+    </script>
 
 </body>
 </html>
