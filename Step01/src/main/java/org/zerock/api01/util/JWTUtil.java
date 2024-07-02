@@ -19,8 +19,10 @@ public class JWTUtil {
     @Value("${org.zerock.jwt.secret}")
     private String key;
 
-    public String generateToken(Map<String, Object> valueMap, int days){
-
+    public String generateToken(
+            Map<String, Object> valueMap,
+            int days
+    ){
         log.info("generateKey..." + key);
 
         //헤더 부분
@@ -45,12 +47,12 @@ public class JWTUtil {
                 .setExpiration(Date.from(ZonedDateTime.now().plusMinutes(time).toInstant()))
                 .signWith(SignatureAlgorithm.HS256, key.getBytes())
                 .compact();
-
         return jwtStr;
     }
 
-    public Map<String, Object> validateToken(String token)throws JwtException {
-
+    public Map<String, Object> validateToken(
+            String token
+    ) throws JwtException {
         Map<String, Object> claim = null;
 
         claim = Jwts.parser()
