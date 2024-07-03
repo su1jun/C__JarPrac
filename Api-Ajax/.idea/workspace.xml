@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="46ba6480-9337-496c-9bcf-8beca54233cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Step01/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/Api01Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/TodoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/config/CustomSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/config/CustomSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/config/CustomServletConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/config/CustomServletConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/config/RootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/config/RootConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/controller/SampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/domain/APIUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/domain/APIUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/domain/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/domain/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/dto/APIUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/dto/APIUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/dto/PageRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/dto/PageRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/dto/PageResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/dto/PageResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/dto/TodoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/dto/TodoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/repository/APIUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/repository/APIUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/repository/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/repository/TodoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/repository/search/TodoSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/repository/search/TodoSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/repository/search/TodoSearchImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/repository/search/TodoSearchImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/APIUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/APIUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/exception/AccessTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/exception/AccessTokenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/exception/RefreshTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/exception/RefreshTokenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/filter/APILoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/filter/APILoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/filter/RefreshTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/filter/RefreshTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/filter/TokenCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/filter/TokenCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/security/handler/APILoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/security/handler/APILoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/service/TodoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/service/TodoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/api01/util/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/main/java/org/zerock/todo/util/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/api01/Api01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/todo/TodoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/api01/repository/APIUserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/todo/repository/APIUserRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/api01/repository/TodoRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/todo/repository/TodoRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/api01/util/JWTUtilTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Step01/src/test/java/org/zerock/todo/util/JWTUtilTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2iYfsBS5wnjQ6d1g3oLOU1lsYRl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "bugfix/postgre-connect",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/su1jun/OneDrive - SEOULTECH/Project/JarPrac/Step03/spring_ws",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46ba6480-9337-496c-9bcf-8beca54233cc" name="Changes" comment="" />
+      <created>1719672635650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719672635650</updated>
+      <workItem from="1719672636672" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
